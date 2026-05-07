@@ -1,1 +1,6 @@
-console.log("Sitio de CHOIKE cargado correctamente");
+const menuToggle = document.getElementById("menu-toggle");
+const siteNav = document.getElementById("site-nav");
+
+menuToggle.addEventListener("click", () => {
+  siteNav.classList.toggle("show");
+});
