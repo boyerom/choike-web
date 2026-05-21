@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -115,7 +115,7 @@ a {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 
 .hero h1,
@@ -462,5 +462,81 @@ a {
   .brand-logo {
     width: 36px;
     height: 36px;
+  }
+}
+.site-preview {
+  filter: blur(6px);
+  transform: scale(1.015);
+  pointer-events: none;
+  user-select: none;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(246, 247, 245, 0.4);
+  z-index: 20;
+}
+
+.launch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.launch-card {
+  width: min(92vw, 620px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  padding: 0 0 18px;
+  text-align: center;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.launch-image {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 0 14px;
+}
+
+.launch-mail {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  word-break: break-word;
+  padding: 0 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .site-preview {
+    filter: blur(4px);
+  }
+
+  .launch-card {
+    width: min(94vw, 520px);
+    padding: 0 0 16px;
+  }
+
+  .launch-mail {
+    font-size: 0.95rem;
+    padding: 0 12px;
   }
 }
